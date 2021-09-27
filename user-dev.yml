@@ -1,0 +1,13 @@
+server:
+  port: 9092
+
+---
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        service-name: user
+        primary-port-name: 9092
+        enabled: true
+        all-namespaces: true
+        wait-cache-ready: false    
