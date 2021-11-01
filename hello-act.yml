@@ -1,7 +1,7 @@
 server:
   port: 8090
 message:
-  act: "heavyflood"
+  act: "phs"
 spring:  
   rabbitmq:
     host: localhost
