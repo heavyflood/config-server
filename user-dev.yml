@@ -11,4 +11,9 @@ spring:
         primary-port-name: 9092
         enabled: true
         all-namespaces: true
-        wait-cache-ready: false    
+        wait-cache-ready: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest        
