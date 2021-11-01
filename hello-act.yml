@@ -2,3 +2,9 @@ server:
   port: 8090
 message:
   act: "heavyflood"
+spring:  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest  
