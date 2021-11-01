@@ -1,12 +1,7 @@
 server:
   port: 8090
 message:
-  act: "heavyflood81"
-management:  
-  endpoints:
-    web:
-      exposure:
-        include: "bus-refresh"  
+  act: "heavyflood91"
 spring:  
   rabbitmq:
     host: 52.79.235.217
