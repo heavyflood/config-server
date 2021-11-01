@@ -4,7 +4,7 @@ message:
   act: "phs"
 spring:  
   rabbitmq:
-    host: localhost
+    host: 52.79.157.106
     port: 5672
     username: guest
     password: guest  
