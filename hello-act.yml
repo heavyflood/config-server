@@ -1,7 +1,7 @@
 server:
   port: 8090
 message:
-  act: "heavyflood51"
+  act: "heavyflood71"
 management:  
   endpoints:
     web:
