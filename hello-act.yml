@@ -9,7 +9,7 @@ management:
         include: "bus-refresh"  
 spring:  
   rabbitmq:
-    host: 52.79.157.106
+    host: 52.79.235.217
     port: 5672
     username: guest
     password: guest  
