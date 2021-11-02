@@ -1,7 +1,7 @@
 server:
   port: 8090
 message:
-  act: "heavyflood402"
+  act: "heavyflood502"
 spring:  
   rabbitmq:
     host: 3.34.125.142
