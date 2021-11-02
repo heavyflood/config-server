@@ -4,7 +4,7 @@ message:
   act: "heavyflood302"
 spring:  
   rabbitmq:
-    host: 52.79.235.217
+    host: 3.34.125.142
     port: 5672
     username: guest
     password: guest  
