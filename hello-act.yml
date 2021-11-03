@@ -1,7 +1,7 @@
 server:
   port: 8090
 message:
-  act: "heavyflood13337"
+  act: "heavyflood 503"
 spring:  
   rabbitmq:
     host: 3.34.125.142
@@ -9,4 +9,4 @@ spring:
     username: guest
     password: guest
   kafka:
-    bootstrap-servers: http://localhost:9092    
+    bootstrap-servers: http://54.180.80.239:9092    
