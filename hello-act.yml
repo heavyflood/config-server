@@ -9,4 +9,4 @@ spring:
     username: guest
     password: guest
   kafka:
-    bootstrap-servers: http://3.34.125.142:9092    
+    bootstrap-servers: http://localhost:9092    
