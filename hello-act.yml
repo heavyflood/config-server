@@ -7,4 +7,6 @@ spring:
     host: 3.34.125.142
     port: 5672
     username: guest
-    password: guest  
+    password: guest
+  kafka:
+    bootstrap-servers: http://3.34.125.142:9092    
