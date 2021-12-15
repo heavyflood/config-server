@@ -1,0 +1,32 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:heavyflood/gw-configs.git
+          ignoreLocalSshSettings: true
+          private-key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            AAABADtlWKvtgJ2VE48/1HowPjGrIOfyKG6m46EnDQK1+ryJWNOdQSgK3CcdJTPM
+            TdGwi++8P8IyCu6eDr+ns1vYK993JOs7mNXjLk33a6F6nOg0mwaMXZe7Pvb4qWDW
+            ZpftA19DhKHQzQclGGYmVDW7EQLpaFHoMVMwYcKfLclhwZPgqMwFjVzltxhjVXPN
+            7lUq3sx8atXnUUnL3OL6QK6fhW6sNxPqDFT/pAKPt/aUILtomrlihJbyxpcn/68m
+            wDY0WcECE3vyyX2ZsWkUvd7bWQ7fYgFPOwX8yfGhQAdNgw6ZTinDzQANdFWfrlhy
+            an/7jHDkt/oKqYd3HfbJpFMffR0AAACBANSSAlwZc9Xk3g/+ewPfYuMSwss7xWIn
+            rtjH/5/9Hldr0+DdrTg2LoUyQ8Lm2DvusVvKqqLZlLdh6v2Z0YCdx5NAWXCm0x+5
+            OCQSnsU4MqUegdOyifCC+7Hq1OoeyXrrNW7Ifs71+UXjff9KqWxrcKa4j1LjnFr/
+            AmR0p7TJZerPAAAAgQCwcV+GA4O9EIDDok1VleIeUS/octoi/XkBbaPP5dCYVFCY
+            7A/MY1y6Azl/+ZBavoi6Dk9dYVCE156RyGPjZwaQGgxMuc6mM9i3/nQZTGBS6gGg
+            XECoIGAuac+BgRhjhFbZWjTTpKljUV5tr1OHpThGKj3oKs7a9NKX7TzH5dkT2QAA
+            AIBQNSaX8YJCz5XCSPbbXJOqNJCrspzVaPa4q2HD/lo7/8aToJa+g5UqEFVMeNg1
+            1oMWVuykzWI3VIvmg8heLJOTeZ1SWRRUY+JudQyrWmvvqDaaHghlRpncjC97Q74i
+            jFpGIn6hqINifzJBfbbpHF1ZS1q9E97EUGD2IEE3GNWjTw==
+            Private-MAC: db08c2606a884f800f84b23c0736a02f0b9f7887
+            -----END RSA PRIVATE KEY-----
+
+          search-paths: '*'

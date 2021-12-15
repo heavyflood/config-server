@@ -1,7 +1,0 @@
-server:
-  port: 8099
-message:
-  act: "heavyflood 12003"
-spring:  
-  kafka:
-    bootstrap-servers: http://54.180.80.239:9092
