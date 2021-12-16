@@ -1,10 +1,26 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,refresh,beans,httptrace,busrefresh
 server:
   port: 9090
 
 spring:
   application:
     name: config-server
+  ## kafka config
+  kafka:
+    bootstrap-servers: 3.37.210.218:9092
   cloud:
+    ## cloud bus config
+    bus:
+      enabled: true
+#      refresh:
+#        enabled: true
+#      env:
+#        enabled: true
+    ## config server
     config:
       server:
         git:

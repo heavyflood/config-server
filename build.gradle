@@ -29,6 +29,10 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-kafka:3.1.0'
+    implementation 'org.springframework.cloud:spring-cloud-config-monitor:3.1.0'
+
+
 }
 
 dependencyManagement {
