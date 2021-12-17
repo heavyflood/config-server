@@ -1,0 +1,101 @@
+# SERVICE
+apiVersion: v1
+kind: Service
+metadata:
+  name: configserver
+spec:
+  type: NodePort
+  selector:
+    app: configserver
+  ports:
+    - name: http
+      protocol: TCP
+      port: 9090
+      #   nodePort: 30130
+      nodePort: null
+      targetPort: 9090
+---
+
+# DEPOLOYMENT
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configserver
+spec:
+  replicas: 3
+  #  minReadySeconds: 20
+  revisionHistoryLimit: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: configserver
+  template:
+    metadata:
+      labels:
+        app: configserver
+    spec:
+      containers:
+        - name: configserver
+          image: heavyflood/config-server:release
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 9090
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "200m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+          livenessProbe:
+            exec:
+              command: ["sh", "-c", "cd /"]
+            initialDelaySeconds: 30
+            periodSeconds: 30
+          #          timeoutSeconds: 1
+          #          successThreshold: 1
+          #          failureThreshold: 3
+          #          httpGet:
+          #            path: /
+          #            port: 8080
+          #          tcpSocket:
+          #            port: 8080
+          #          initialDelaySeconds: 5
+          #          periodSeconds: 5
+          #          successThreshold: 1
+          readinessProbe:
+            exec:
+              command: ["sh", "-c", "cd /"]
+            initialDelaySeconds: 30
+            periodSeconds: 15
+          #          timeoutSeconds: 1
+          #          successThreshold: 1
+          #          failureThreshold: 3
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 20"]
+      imagePullSecrets:
+        - name: regcred
+---
+
+#Ingress
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app-ingress
+  annotations:
+  kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: configserver
+              servicePort: 9090
