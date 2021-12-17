@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
         - name: configserver
-          image: heavyflood/config-server:release
+          image: heavyflood/config-server
           imagePullPolicy: Always
           ports:
             - name: http
